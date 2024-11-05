@@ -35,7 +35,6 @@ router.get("/search/:departure/:arrival/:date", function (req, res, next) {
 });
 
 router.post("/book", (req, res) => {
-  console.log(req.body);
   const { departure, arrival, date, price } = req.body;
 
   const cartTrip = new Cart({
@@ -47,7 +46,11 @@ router.post("/book", (req, res) => {
 
   cartTrip.save().then((data) => {
     if (data) {
-      res.json({ result: true, message: "Trip added to cart successfully" });
+      res.json({
+        result: true,
+        message: "Trip added to cart successfully",
+        trip: data,
+      });
     } else res.json({ result: false, error: "Error" });
     console.log(data);
   });
