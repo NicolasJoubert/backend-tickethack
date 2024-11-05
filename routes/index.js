@@ -25,7 +25,7 @@ router.get("/search/:departure/:arrival/:date", function (req, res, next) {
       $lte: endOfDay,
     },
   }).then((data) => {
-    if (data) {
+    if (data.length > 0) {
       res.json({ result: true, trip: data });
     } else {
       res.json({ result: false, error: "Trip not found" });
