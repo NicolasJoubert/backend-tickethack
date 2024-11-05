@@ -1,14 +1,13 @@
 //Requirements
 const mongoose = require("mongoose");
 //Schema Declaration
-const articleSchema = mongoose.Schema({
-  name: String,
+const cartSchema = mongoose.Schema({
+  departure: String,
+  arrival: String,
+  date: Date,
   price: Number,
-  stock: Number,
-  weight: Number,
-  image: String,
 });
 //Model Declaration
-const Article = mongoose.model("articles", articleSchema);
+const Cart = mongoose.model("carts", cartSchema);
 //Modules Export
-module.exports = Article;
+module.exports = Cart;
