@@ -1,9 +1,13 @@
 var express = require("express");
 var router = express.Router();
 
-/* GET users listing. */
-router.get("/", function (req, res, next) {
-  res.send("respond with a resource");
-});
+const Booking = require("../models/bookings.js");
+
+  router.get("/", (req, res) => {
+    Bookings.find().then((data) => {
+      res.json({ allBookings: data });
+    });
+  });
+
 
 module.exports = router;

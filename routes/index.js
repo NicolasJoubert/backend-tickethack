@@ -2,7 +2,7 @@ var express = require("express");
 var router = express.Router();
 
 const Trip = require("../models/trips.js");
-const Cart = require("../models/cart.js");
+
 
 /* GET home page. */
 

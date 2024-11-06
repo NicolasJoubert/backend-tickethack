@@ -1,7 +1,8 @@
 var express = require("express");
 var router = express.Router();
 
-const Cart = require("../models/cart.js");
+const Trip = require("../models/trips.js");
+
 
   router.get("/", (req, res) => {
     Cart.find().then((data) => {
