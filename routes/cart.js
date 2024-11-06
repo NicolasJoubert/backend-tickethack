@@ -1,11 +1,11 @@
 var express = require("express");
 var router = express.Router();
 
-const Trip = require("../models/trips.js");
+const Cart = require("../models/carts.js");
 
 
   router.get("/", (req, res) => {
-    Cart.find().then((data) => {
+    Cart.findAll().then((data) => {
       res.json({ allTripsofCart: data });
     });
   });
