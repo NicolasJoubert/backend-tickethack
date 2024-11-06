@@ -23,7 +23,7 @@ router.delete("/:id", function (req, res, next) {
 });
 
 router.post("/purchase", (req, res) => {
-  const { departure, arrival, date, price } = req.body;
+  const { tripData } = req.body;
 
   const BookingTrip = new Booking({
     departure: departure,
